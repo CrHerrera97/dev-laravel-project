@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\DatoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,13 @@ Route::get('/posts/{post}/edit', PostController::class .'@edit')->name('posts.ed
 Route::put('/posts/{post}', PostController::class .'@update')->name('posts.update');
 // deletes a post
 Route::delete('/posts/{post}', PostController::class .'@destroy')->name('posts.destroy');
+
+
+Route::get('/home',[DatoController::class,'index'])->name('home');
+
+
+Route::get('/add_persona',[DatoController::class,'add'])->name('add_persona');
+
+Route::get('/edit_persona/{id}',[DatoController::class,'edit'])->name('edit_persona');
+
+Route::post('/post_persona',[DatoController::class,'store'])->name('post_persona.store');
