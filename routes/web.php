@@ -48,4 +48,8 @@ Route::get('/add_persona',[DatoController::class,'add'])->name('add_persona');
 
 Route::get('/edit_persona/{id}',[DatoController::class,'edit'])->name('edit_persona');
 
+Route::put('/update_persona/{id}',[DatoController::class,'update'])->name('update_persona');
+
 Route::post('/post_persona',[DatoController::class,'store'])->name('post_persona.store');
+
+Route::delete('/delete_persona/{id}',[DatoController::class.'@delete'])->name('delete_persona');

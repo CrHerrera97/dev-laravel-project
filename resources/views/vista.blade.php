@@ -25,7 +25,7 @@
             <td>{{$item->nombre}}</td>
             <td>{{$item->edad}}</td>
             <td><a href="{{route('edit_persona',$item->id)}}">edit</a></td>
-            <td><a href="{{route('add_persona')}}">eliminar</a></td>
+            <td><a href="{{route('delete_persona',$item->id)}}">eliminar</a></td>
         </tr>
     @endforeach
     </table>

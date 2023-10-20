@@ -26,6 +26,23 @@ class DatoController extends Controller
         return view('edit_persona',compact('datos'));
     }
 
+
+    public function update(request $id) {
+        $datos = Dato::find($id);
+
+        $datos->update()->all();
+        return redirect()->route('home')
+            ->with('success','Post created successfully.');
+    }
+
+    public function delete($id) {
+        $datos = Dato::find($id);
+
+        $datos->delete();
+        return redirect()->route('home')
+            ->with('success','Post created successfully.');
+    }
+
     public function store(request $request){
         Dato::create($request->all());
         //Route::get('/home',[DatoController::class,'index'])->name('home');
