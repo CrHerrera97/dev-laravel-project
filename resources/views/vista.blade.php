@@ -7,12 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
-    <form action="{{ route('add_persona') }}" method="GET">
-
-        <button type="submit">Agregar Persona</button>
-
-    </form>
+    <a href="{{ route('add_persona') }}">Agregar persona</a></td>
 
 
     <table>
@@ -25,7 +20,13 @@
             <td>{{$item->nombre}}</td>
             <td>{{$item->edad}}</td>
             <td><a href="{{route('edit_persona',$item->id)}}">edit</a></td>
-            <td><a href="{{route('delete_persona',$item->id)}}">eliminar</a></td>
+            <td>
+                <form action="{{route('delete_persona',$item->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
         </tr>
     @endforeach
     </table>
