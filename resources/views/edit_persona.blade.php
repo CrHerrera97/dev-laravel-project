@@ -9,8 +9,9 @@
 <body>
     <h3>editar persona</h3>
 
-    <form action="{{ route('post_persona.store') }}" method="post">
+    <form action="{{ route('update_persona.update',$datos->id) }}" method="post">
         @csrf
+        @method('PUT')
         <input type="text" name="nombre" id="nombre" value="{{$datos->nombre}}">
         <input type="text" name="edad" id="nombre" value="{{$datos->edad}}">
 

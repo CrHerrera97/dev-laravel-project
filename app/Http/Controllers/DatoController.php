@@ -27,10 +27,10 @@ class DatoController extends Controller
     }
 
 
-    public function update(request $id) {
+    public function update(Request $request, $id) {
         $datos = Dato::find($id);
 
-        $datos->update()->all();
+        $datos->update($request->all());
         return redirect()->route('home')
             ->with('success','Post created successfully.');
     }
