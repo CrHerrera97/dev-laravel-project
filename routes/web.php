@@ -5,6 +5,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DatoController;
+use App\Http\Controllers\ApiController;
+
+//api
+
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +58,5 @@ Route::put('/update_persona/{id}',[DatoController::class,'update'])->name('updat
 Route::post('/post_persona',[DatoController::class,'store'])->name('post_persona.store');
 
 Route::delete('/delete_persona/{id}',[DatoController::class,'delete'])->name('delete_persona');
+
+Route::get('/home/api',[ApiController::class,'traer'])->name('traer');
