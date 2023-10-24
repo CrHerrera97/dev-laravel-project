@@ -20,4 +20,9 @@ class ApiController extends Controller
 
 
     }
+
+    public function mostrar($nombre){
+
+        return view('api_view',['nombre' => $nombre]);
+    }
 }

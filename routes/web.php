@@ -59,4 +59,9 @@ Route::post('/post_persona',[DatoController::class,'store'])->name('post_persona
 
 Route::delete('/delete_persona/{id}',[DatoController::class,'delete'])->name('delete_persona');
 
+
+//route api
+
 Route::get('/home/api',[ApiController::class,'traer'])->name('traer');
+
+Route::get('/home/api/{nombre}',[ApiController::class,'mostrar'])->name('mostrar');
