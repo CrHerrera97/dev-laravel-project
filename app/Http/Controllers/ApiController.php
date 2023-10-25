@@ -25,4 +25,8 @@ class ApiController extends Controller
 
         return view('api_view',['nombre' => $nombre]);
     }
+
+    public function vista() {
+        return ("Mostrando Vista");
+    }
 }
