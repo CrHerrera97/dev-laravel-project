@@ -65,3 +65,5 @@ Route::delete('/delete_persona/{id}',[DatoController::class,'delete'])->name('de
 Route::get('/home/api',[ApiController::class,'traer'])->name('traer');
 
 Route::get('/home/api/{nombre}',[ApiController::class,'mostrar'])->name('mostrar');
+
+Route::get('/home/api/pokemon',[ApiController::class,'vista'])->name('vista');
