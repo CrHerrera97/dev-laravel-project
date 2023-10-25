@@ -9,6 +9,7 @@
 <body>
     <h3>{{$nombre}}</h3>
 
-    <a href="{{route('traer'),}}">Regresar</a>
+    <a href="{{route('traer'),}}">Volver</a>
+
 </body>
 </html>
