@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\View\view;
 use App\Models\Dato;
-
+use Illuminate\Support\Js;
 
 class DatoController extends Controller
 {
@@ -50,4 +50,43 @@ class DatoController extends Controller
         return redirect()->route('home')
             ->with('success','Post created successfully.');
     }
+
+
+    public function hola() {
+        $datos = Dato::all();
+
+        $salida = response()->json($datos);
+
+        return $salida;
+    }
+
+    /*
+    public function consumoApi(){
+        $url = 'http://localhost:8000/home/apis';
+
+        $response = file_get_contents($url);
+
+        $datos = json_decode($response,true);
+
+        foreach ($datos as $data) {
+            echo $data['id'];
+        }
+
+
+        return view('mostrarApi'.['data'=>$data]);
+    }
+
+    */
+
+
+    public function consumoApi(){
+        $url = 'http://localhost:8000/home/apis';
+    
+        $response = file_get_contents($url);
+    
+        $datos = json_decode($response, true);
+    
+        return view('mostrarApi', ['datos' => $datos]);
+    }
+    
 }
