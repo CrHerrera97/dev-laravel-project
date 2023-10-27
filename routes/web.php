@@ -71,3 +71,7 @@ Route::get('/home/apis', [DatoController::class,'hola'])->name('hola');
 Route::get('home/apis/consumo',[DatoController::class,'consumoApi'])->name('consumoApi');
 
 Route::view('home/apis/mostrar','mostrar')->name('mostrarApi');
+
+Route::get('home/mostrar',[ApiController::class,'formato'])->name('formato');
+
+Route::get('/generar_json',[ApiController::class,'consumir'])->name('consumir');
