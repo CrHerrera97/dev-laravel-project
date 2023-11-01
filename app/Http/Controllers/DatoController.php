@@ -50,4 +50,11 @@ class DatoController extends Controller
         return redirect()->route('home')
             ->with('success','Post created successfully.');
     }
+
+
+    public function dato(){
+        $datos = Dato::all();
+
+        return response()->json($datos, 200);
+    }
 }

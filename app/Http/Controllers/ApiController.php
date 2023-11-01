@@ -29,4 +29,17 @@ class ApiController extends Controller
     public function vista() {
         return ("Mostrando Vista");
     }
+
+
+    public function apis(){
+
+       $url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+
+       $request = Http::get($url);
+
+       $data = $request->json();
+
+       return view('vista_api',['datoo' => $data]);
+
+    }
 }
