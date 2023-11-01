@@ -7,6 +7,8 @@ use Illuminate\View\view;
 use App\Models\Dato;
 
 
+classuse Illuminate\Support\Js;
+
 class DatoController extends Controller
 {
     public function index():view{
@@ -57,4 +59,3 @@ class DatoController extends Controller
 
         return response()->json($datos, 200);
     }
-}

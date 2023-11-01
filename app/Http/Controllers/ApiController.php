@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\view;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\File;
 
 class ApiController extends Controller
 {
@@ -26,8 +27,17 @@ class ApiController extends Controller
         return view('api_view',['nombre' => $nombre]);
     }
 
-    public function vista() {
-        return ("Mostrando Vista");
+    public function consumir(){
+
+        $url = 'http://localhost:8000/json/tu_archivo.json';
+
+        $response = Http::get($url);
+
+        $data = $response->json();
+
+        return view('vista_api',['data' => $data]);
+
+
     }
 
 

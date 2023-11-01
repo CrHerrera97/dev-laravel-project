@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>{{$nombre}}</h3>
+    <h3>api</h3>
 
-    <a href="{{route('traer'),}}">Regresar</a>
+
+    @foreach ($datos as $dato)
+    
+    <h3>{{$dato}}</h3>
+    
+    @endforeach
 </body>
 </html>
