@@ -11,22 +11,6 @@ use App\Http\Controllers\ApiController;
 
 use Illuminate\Support\Facades\Http;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-
-*/
 Route::get('/users/{user_id}', [UserController::class, 'index']);
 
 Route::get('/materias/{id}',[MateriaController::class, 'materia']);
@@ -75,3 +59,5 @@ Route::view('home/apis/mostrar','mostrar')->name('mostrarApi');
 Route::get('home/mostrar',[ApiController::class,'formato'])->name('formato');
 
 Route::get('/generar_json',[ApiController::class,'consumir'])->name('consumir');
+
+
