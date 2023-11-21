@@ -43,19 +43,19 @@ Route::post('/post_persona',[DatoController::class,'store'])->name('post_persona
 
 Route::delete('/delete_persona/{id}',[DatoController::class,'delete'])->name('delete_persona');
 
-
-//route api
+/*
 
 Route::get('/home/api',[ApiController::class,'traer'])->name('traer');
 
 Route::get('/home/api/{nombre}',[ApiController::class,'mostrar'])->name('mostrar');
 
-Route::get('/home/apis', [DatoController::class,'hola'])->name('hola');
+Route::get('/home/api/pokemon',[ApiController::class,'vista'])->name('vista');
 
-Route::get('home/apis/consumo',[DatoController::class,'consumoApi'])->name('consumoApi');
+Route::get('/home/apis',[ApiController::class,'apis'])->name('apis');
 
-Route::view('home/apis/mostrar','mostrar')->name('mostrarApi');
+*/
 
-Route::get('home/mostrar',[ApiController::class,'formato'])->name('formato');
 
-Route::get('/generar_json',[ApiController::class,'consumir'])->name('consumir');
+Route::get('home/api',[ApiController::class,'apis'])->name('apis');
+
+Route::get('/home/dato',[DatoController::class,'dato'])->name('home');

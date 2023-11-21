@@ -40,32 +40,16 @@ class ApiController extends Controller
 
     }
 
-    public function formato(){
 
-        $datos_json = [
-            'dato1' => 'hola',
-            'dato2' => 'como estas'
-        ];
+    public function apis(){
 
-        $json = json_encode($datos_json);
+       $url = 'https://pokeapi.co/api/v2/pokemon/ditto';
 
-        /*
+       $request = Http::get($url);
 
-        $url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+       $data = $request->json();
 
-        $response = file_get_contents($url);
-
-        $data = json_decode($response,true);
-
-        return $data;
-        */
-        File::put(storage_path('app\json\tu_archivo.json'), $json);
-
-        return 'JSON generado y guardado con éxito';
-
+       return view('vista_api',['datoo' => $data]);
 
     }
-
-
-
 }

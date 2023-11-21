@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\View\view;
 use App\Models\Dato;
-use Illuminate\Support\Js;
+
+
+classuse Illuminate\Support\Js;
 
 class DatoController extends Controller
 {
@@ -52,41 +54,8 @@ class DatoController extends Controller
     }
 
 
-    public function hola() {
+    public function dato(){
         $datos = Dato::all();
 
-        $salida = response()->json($datos);
-
-        return $salida;
+        return response()->json($datos, 200);
     }
-
-    /*
-    public function consumoApi(){
-        $url = 'http://localhost:8000/home/apis';
-
-        $response = file_get_contents($url);
-
-        $datos = json_decode($response,true);
-
-        foreach ($datos as $data) {
-            echo $data['id'];
-        }
-
-
-        return view('mostrarApi'.['data'=>$data]);
-    }
-
-    */
-
-
-    public function consumoApi(){
-        $url = 'http://localhost:8000/home/apis';
-    
-        $response = file_get_contents($url);
-    
-        $datos = json_decode($response, true);
-    
-        return view('mostrarApi', ['datos' => $datos]);
-    }
-    
-}
